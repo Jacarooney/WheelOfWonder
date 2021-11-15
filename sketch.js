@@ -356,7 +356,7 @@ function updateTeams(data) {
   //   //}
   // }
   
-  for (let i = 0; i < data.table.rows.length; i++){
+  for (let i = 1; i < data.table.rows.length; i++){
     emails.push(data.table.rows[i].c[1].v);
     teams.push(data.table.rows[i].c[2].v);
   }
