@@ -308,8 +308,6 @@ function mousePressed() {
   if (state == 0) {
     //LOAD JSON
     if (!teamsAdded) {
-      let fs = fullscreen();
-    fullscreen(!fs);
    fetch(`https://docs.google.com/spreadsheets/d/1EWkHbjjr4RNvDhZalAziS2pU-8KI-4a6ACxywBdg30k/gviz/tq?tqx=out:json`)
     .then(res => res.text())
     .then(text => {
