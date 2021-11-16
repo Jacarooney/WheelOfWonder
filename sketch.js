@@ -356,7 +356,7 @@ function updateTeams(data) {
   //   //}
   // }
   
-  for (let i = 1; i < data.table.rows.length; i++){
+  for (let i = 0; i < data.table.rows.length; i++){
     emails.push(data.table.rows[i].c[1].v);
     teams.push(data.table.rows[i].c[2].v);
   }
@@ -381,10 +381,17 @@ for(var i = 0; i < emails.length; i++){
     teams.splice(dupes[j]-j,1);  
   }
   
-  if (teams[0] == undefined){
+  //If accidentally record column names, remove them from lists
+  if (emails.length <= 1){
     teams = ['No Entrants','Daisy','Whoopsy'];
     emails = ['','',''];
   }
+  
+  if (emails[0] == "email address"){
+    emails.splice(0, 1);
+    teams.splice(0,1);
+  }
+
   
   //RANDOMISE ORDER
   let index = [];
